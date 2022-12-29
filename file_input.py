@@ -13,33 +13,19 @@ import math  # import the math module
 def split_list(lst, first_half, second_half):
     middle = int(len(lst) / 2)  # calculate the middle index of the list
 
-    if len(lst) % 2 == 1:  # if the list has an odd number of elements
-        middle = math.ceil(middle)  # round up to the nearest integer
+    middle = math.ceil(middle)  # round up to the nearest integer
 
-        # iterate over the first half of the list and append the elements
-        # to the first_half list
-        for i in range(middle):
-            from_list = lst[i]
-            first_half.append(from_list)
+    # iterate over the first half of the list and append the elements
+    # to the first_half list
+    for i in range(middle):
+        from_list = lst[i]
+        first_half.append(from_list)
 
-        # iterate over the second half of the list and append the elements
-        # to the second_half list
-        for i in range(middle, len(lst)):
-            from_list = lst[i]
-            second_half.append(from_list)
-
-    else:  # if the list has an even number of elements
-        # iterate over the first half of the list and append the elements
-        # to the first_half list
-        for i in range(middle):
-            from_list = lst[i]
-            first_half.append(from_list)
-
-        # iterate over the second half of the list and append the elements
-        # to the second_half list
-        for i in range(middle, len(lst)):
-            from_list = lst[i]
-            second_half.append(from_list)
+    # iterate over the second half of the list and append the elements
+    # to the second_half list
+    for i in range(middle, len(lst)):
+        from_list = lst[i]
+        second_half.append(from_list)
 
 
 def main():
@@ -61,7 +47,7 @@ def main():
     if fileInput.upper() == "FILE":  # if the user wants to read from a file
         try:
             # open the file in read mode
-            with open("list.txt", "r") as f:
+            with open("test.txt", "r") as f:
                 # read the first line of the file
                 list_string = f.readline()
                 # split the line into a list of numbers
@@ -83,10 +69,10 @@ def main():
     else:  # if the user wants to input or they just input incorrectly
         try:
             # get list of numbers
-            list_string = input("Enter a list of numbers " + "(separated by spaces): ")
+            list_string = input("Enter a list of elements (separated by spaces): ")
 
             # split the line into a list of numbers
-            lst = list(map(int, list_string.split()))
+            lst = list_string.split()
 
             # create empty lists to store the two halves of the list
             half_1 = []
