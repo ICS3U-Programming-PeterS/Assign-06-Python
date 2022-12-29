@@ -11,7 +11,7 @@ import math  # import the math module
 
 # split list function
 def split_list(lst, first_half, second_half):
-    middle = int(len(lst) / 2)  # calculate the middle index of the list
+    middle = float(len(lst) / 2)  # calculate the middle index of the list
 
     middle = math.ceil(middle)  # round up to the nearest integer
 
